@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+    website:
+        image: "php:apache"
+        volumes:
+            - /website:/var/www/html
+        depends_on:
+            - api
+        ports:
+            - 8080:80
+    api:
+        image: "5a7083feec6d"
+        volumes:
+            - /data
+        ports:
+            - 5000:5000
