@@ -13,6 +13,6 @@ node{
     docker.image('e71fc5c0fcb1'.withRun('-p 80/80') {c ->
       sh 'docker ps'
       sh 'curl localhost'
-    }
+     }
   }
 }
