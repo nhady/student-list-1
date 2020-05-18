@@ -12,5 +12,5 @@ node {
         sh 'docker ps'
         sh 'curl localhost'
          }
-     }
+       }
 }
