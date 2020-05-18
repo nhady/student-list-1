@@ -16,3 +16,4 @@ node{
          sh 'curl localhost'
           }
     }
+}
