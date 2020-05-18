@@ -6,10 +6,10 @@ node{
   }
   
   stage('Build image') {
-    app = docker.build("xavki/nginx")
+    app = docker.build("e71fc5c0fcb1")
   }
   
   stage('Test image') {
-    docker.image('xavki/nginx').withRun('-p 80:80')
+    docker.image('e71fc5c0fcb1').withRun('-p 80:80')
   }
 }
