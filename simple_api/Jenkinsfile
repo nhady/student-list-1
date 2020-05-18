@@ -10,6 +10,6 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun('-p 80:80')
+    docker.image('my_image').withRun('-p 8080:80')
   }
 }
