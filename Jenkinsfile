@@ -10,8 +10,9 @@ node{
   }
   
   stage('Test image') {
-    let imd = docker.image('e71fc5c0fcb1').withRun('-p 80:80'){c -> 
-      sh 'curl -u toto: python -X GET http://192.168.48.158:80/pozos/api/v1.0/get_student_ages'
+    docker.image('e71fc5c0fcb1').withRun('-p 80:80'){c -> 
+      sh 'curl -u toto: python -X GET http://localhost/pozos/api/v1.0/get_student_ages'
+      sh 'curl localhost'
     }
   }
   
