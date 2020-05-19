@@ -10,9 +10,9 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("-p 443:8080"){c ->
+    docker.image('my_image').withRun("-p 1023:8080"){c ->
       sh 'docker ps'
-      sh 'curl -u toto:python -X GET http://127.0.0.1:443/pozos/api/v1.0/get_student_ages'
+      sh 'curl -u toto:python -X GET http://127.0.0.1:1023/pozos/api/v1.0/get_student_ages'
       
     }
   }
