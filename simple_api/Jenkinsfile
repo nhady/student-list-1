@@ -12,7 +12,7 @@ node{
   stage('Test image') {
     docker.image('my_image').withRun("-p 5000:5000"){c ->
       sh 'docker ps'
-      sh 'curl localhost'
+      sh 'curl -u toto: python -X GET http://localhost/pozos/api/v1.0/get_student_ages'
       
     }
   }
