@@ -5,6 +5,10 @@ node{
     checkout scm
   }
   
+  stage('prmier test') {
+      sh 'docker ps'
+    }
+  
   stage('Build image') {
     app = docker.build("e71fc5c0fcb1")
   }
