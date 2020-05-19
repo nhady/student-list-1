@@ -6,5 +6,5 @@ RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
 RUN mkdir /data
 VOLUME /data
 COPY /student_age.json /data/student_age.json
-EXPOSE 80
+EXPOSE 8080
 CMD [ "python", "./student_age.py" ]
