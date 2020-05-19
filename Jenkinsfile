@@ -13,12 +13,12 @@ node{
     app = docker.build("e71fc5c0fcb1")
   }
   
-  stage('Test image') {
+  stage('Test nhady') {
     docker.image('e71fc5c0fcb1').withRun('-p 80:80')
       
     }
     
-    stage('doker ps') {
+    stage('Test image') {
       sh 'docker ps'
     }
   
