@@ -14,6 +14,10 @@ node{
       sh 'docker ps'
       sh 'curl localhost'
     }
+    
+    stage ('doker ps'){
+      sh'docker ps'
+    }
   }
   
 }
