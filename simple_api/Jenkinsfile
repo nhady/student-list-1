@@ -10,11 +10,11 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("--name test1 -p 127.17.0.2:80:5000 -e DEBUG=true"){c ->
+    docker.image('my_image').withRun("--name test1 -p 172.17.0.2:80:5000 -e DEBUG=true"){c ->
       sh 'docker ps'
       sh 'netstat -l'
       sh 'docker inspect test1'
-      sh 'curl -u toto:python -X GET http://127.17.0.2:80/pozos/api/v1.0/get_student_ages'
+      sh 'curl -u toto:python -X GET http://172.17.0.2:80/pozos/api/v1.0/get_student_ages'
       
     }
   }
