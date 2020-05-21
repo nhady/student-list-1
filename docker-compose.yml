@@ -2,6 +2,7 @@ version: '3.7'
 services:
     website:
         image: "php:apache"
+        alias: "localhost"
         volumes:
             - /website:/var/www/html
         depends_on:
