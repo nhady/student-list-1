@@ -14,7 +14,7 @@ node{
       sh 'docker ps'
       sh 'netstat -l'
       sh 'docker inspect test1'
-      sh 'curl -u toto:python -X GET http://0.0.0.0:5000/pozos/api/v1.0/get_student_ages'
+      sh 'curl -u toto:python -X GET http://127.17.0.2:8080/pozos/api/v1.0/get_student_ages'
       
     }
   }
