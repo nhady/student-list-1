@@ -6,5 +6,8 @@ RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
 RUN mkdir /data
 VOLUME /data
 COPY /student_age.json /data/student_age.json
+HEALTHCHECK --interval=5s \
+            --timetout=5s \
+            CMD curl -f http:\\127.0.0.1:5000 || exit 1
 EXPOSE 5000
 CMD [ "python", "./student_age.py" ]
