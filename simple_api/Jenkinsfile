@@ -10,10 +10,10 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("--name my_yarlayarlo -p 5000:5000 -e DEBUG=true"){c ->
+    docker.image('my_image').withRun("--name my_yarlayarlu -p 5000:5000 -e DEBUG=true"){c ->
       sh 'docker ps'
-      sh 'docker inspect my_yarlayarlo | grep "IPAddress"'
-      sh 'curl -u toto:python -X GET http://my_yarlayarlo:5000/pozos/api/v1.0/get_student_ages'
+      sh 'docker inspect my_yarlayarlu | grep "IPAddress"'
+      sh 'curl -u toto:python -X GET http://my_yarlayarlu:5000/pozos/api/v1.0/get_student_ages'
       
     }
   }
