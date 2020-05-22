@@ -10,11 +10,8 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("-p 5000:5000 -e DEBUG=true"){c ->
-      sh 'docker ps'
-      sh 'npm install'
-      sh 'npm test'
-      sh 'curl -u toto:python -X GET http://0.0.0.0:5000/pozos/api/v1.0/get_student_ages'
+    app.inside{
+    echo'Test "test passed"'}
       
     }
   }
