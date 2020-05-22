@@ -9,7 +9,8 @@ node{
     app = docker.build("my_image", "./simple_api/")
   }
   
-  stage('Test image') {
+  stage('Test image') {c ->
+      sh 'docker ps'
     app.inside{
     echo'Test "test passed"'}
       
