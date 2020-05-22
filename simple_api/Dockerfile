@@ -8,5 +8,5 @@ VOLUME /data
 COPY /student_age.json /data/student_age.json
 EXPOSE 5000
 CMD [ "python", "./student_age.py" ]
-CMD ["flask","run","--host","0.0.0.0"]
+CMD ["flask","run","--host","0.0.0.0","--port","5000"]
 
