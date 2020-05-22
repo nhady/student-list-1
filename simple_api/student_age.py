@@ -41,7 +41,7 @@ def get_student_ages():
     return jsonify({'student_ages': student_age })
 
 @app.route('/pozos/api/v1.0/get_student_ages/<student_name>', methods=['GET'])
-@auth.login_required
+#@auth.login_required
 def get_student_age(student_name):
     if student_name not in student_age :
         abort(404)
@@ -56,4 +56,4 @@ def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='192.168.48.160')
