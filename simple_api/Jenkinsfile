@@ -10,7 +10,7 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("--name final -p 8081:5000 -e DEBUG=true","--arg1 python --arg2 ./student_age.py"){c ->
+    docker.image('my_image').withRun("-p 8081:5000 -e DEBUG=true","--arg1 python --arg2 ./student_age.py"){c ->
       sh 'docker ps'
       sh 'curl -u toto:python -X GET http://172.17.0.2:8081/pozos/api/v1.0/get_student_ages'
       
