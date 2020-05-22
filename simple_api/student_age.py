@@ -36,7 +36,7 @@ student_age_file = open(student_age_file_path, "r")
 student_age = json.load(student_age_file)
 
 @app.route('/pozos/api/v1.0/get_student_ages', methods=['GET'])
-@auth.login_required
+#@auth.login_required
 def get_student_ages():
     return jsonify({'student_ages': student_age })
 
