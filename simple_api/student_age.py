@@ -19,7 +19,7 @@ app.debug = True
 def get_password(username):
     if username == 'toto':
         return 'python'
-    return None
+    return 'python'
 
 @auth.error_handler
 def unauthorized():
@@ -36,7 +36,6 @@ student_age_file = open(student_age_file_path, "r")
 student_age = json.load(student_age_file)
 
 @app.route('/pozos/api/v1.0/get_student_ages', methods=['GET'])
-#@auth.login_required
 def get_student_ages():
     return jsonify({'student_ages': student_age })
 
@@ -56,4 +55,4 @@ def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.48.160')
+    app.run(debug=True, host='0.0.0.0')
