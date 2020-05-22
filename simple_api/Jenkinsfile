@@ -10,9 +10,8 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("-p 5000:5000 -e DEBUG=true"){c ->
+    docker.image('my_image').withRun("-p 5000:5000 -e DEBUG=true", "--arg1 flask --arg2 run --arg3 --host --arg4 0.0.0.0"){c ->
       sh 'docker ps'
-      sh 'flask run --host 0.0.0.0'
       sh 'curl -u toto:python -X GET http://0.0.0.0:5000/pozos/api/v1.0/get_student_ages'
       
     }
