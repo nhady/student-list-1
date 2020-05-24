@@ -1,0 +1,3 @@
+app_vm ansible_host=192.168.48.150
+[all:vars]
+ansible_user=user
