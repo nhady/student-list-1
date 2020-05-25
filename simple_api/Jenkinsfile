@@ -10,7 +10,7 @@ node{
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("-d --rm -ti --name myimage --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json f144"){c ->
+    docker.image('my_image').withRun("--name myimage --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json f144"){c ->
       sh 'docker ps'
     
     }
