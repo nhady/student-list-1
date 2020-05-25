@@ -3,9 +3,20 @@
   tasks:
     - name: Deploy 4dvop-app
       docker_container:
-        name: Api
+        name: myimage
         hostname: python
         image: nhady/docker-test
         state: started
         ports:
-          - "5000:5000"
+          - "7000:7000"
+           - name: Deploy student-list
+      -docker_container:
+        name: nginx
+        hostname: nginx
+        image: dirane/4dvop-nginx
+        state: started
+        links:
+          - nginx:nginx
+        ports:
+          - "80:80"
+       
