@@ -1,3 +1,7 @@
-app_vm ansible_host=192.168.48.150
-[all:vars]
-ansible_user=user
+webservers:
+ hosts:
+  app_vm:
+   ansible_host: "192.168.48.150"
+   ansible_user: user
+   ansible_password: "root"
+
