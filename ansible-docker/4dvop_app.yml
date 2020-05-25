@@ -9,8 +9,8 @@
         state: started
         ports:
           - "7000:7000"
-           - name: Deploy student-list
-      -docker_container:
+      - name: Deploy student-list
+        docker_container:
         name: nginx
         hostname: nginx
         image: dirane/4dvop-nginx
