@@ -1,7 +1,5 @@
 [app_vm] 
-ansible_host=192.168.48.150 
-ansible_user=root
-ansible_password=root
-ansible_ssh_pass=root
+192.168.48.150 
+
 
 
