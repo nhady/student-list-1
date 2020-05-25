@@ -5,7 +5,7 @@
       docker_container:
         name: Api
         hostname: python
-        image: 4dvop/myimage
+        image: nhady/docker-test
         state: started
         ports:
           - "5000:5000"
