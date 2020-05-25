@@ -12,7 +12,7 @@ node{
   stage('Test image') {
     docker.image('4dvop-image').withRun("--name myimage --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
       sh 'docker ps'
-      sh'curl -u "toto:python" -X GET http://myimage:5000/pozos/api/v1.0/get_student_ages'
+      sh'curl -u "toto:python" -X GET http://myimage:7000/pozos/api/v1.0/get_student_ages'
     
     }
   }
