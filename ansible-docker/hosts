@@ -1,3 +1,5 @@
-[web-server] 
-app_vm ansible_host=192.168.48.150 ansible_port=80 ansible_user=user
+[app_vm] 
+ansible_host=192.168.48.150 
+ansible_port=80 
+ansible_user=user
 
