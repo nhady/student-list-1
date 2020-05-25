@@ -1,4 +1,4 @@
-- hosts: app-server
+- hosts: app-vm
   become: true
   tasks:
     - name: Deploy nginx
