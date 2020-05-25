@@ -10,8 +10,9 @@ node{
   }
   
   stage('Test image') {
-    docker.image('test').withRun("--network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
+    docker.image('test').withRun("--name image2 --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
       sh 'docker ps'
+      sh'curl -u "toto:python" -X GET http://image2:5000/pozos/api/v1.0/get_student_ages'
     
     }
   }
