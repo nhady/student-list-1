@@ -6,13 +6,13 @@ node{
   }
   
   stage('Build image') {
-    app = docker.build("4dvopImage", "./simple_api/")
+    app = docker.build("4dvop-image", "./simple_api/")
   }
   
   stage('Test image') {
-    docker.image('4dvopImage').withRun("--name 4dvopApi --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
+    docker.image('4dvop-image').withRun("--name 4dvop-api --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
       sh 'docker ps'
-      sh'curl -u "toto:python" -X GET http://4dvopApi:5000/pozos/api/v1.0/get_student_ages'
+      sh'curl -u "toto:python" -X GET http://4dvop-api:5000/pozos/api/v1.0/get_student_ages'
     
     }
   }
