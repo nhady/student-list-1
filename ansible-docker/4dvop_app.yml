@@ -1,4 +1,4 @@
-- hosts: 192.168.48.150
+- hosts: app_vm
   become: true
   tasks:
     - name: Deploy 4dvop-app
