@@ -1,5 +1,5 @@
 [app_vm] 
-192.168.48.160 ansible_username=root ansible_password=root
+192.168.48.162 ansible_username=root ansible_password=root
 
 
 
