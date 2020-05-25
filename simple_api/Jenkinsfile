@@ -6,11 +6,11 @@ node{
   }
   
   stage('Build image') {
-    app = docker.build("my_image", "./simple_api/")
+    app = docker.build("test", "./simple_api/")
   }
   
   stage('Test image') {
-    docker.image('my_image').withRun("--name myimage --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
+    docker.image('test').withRun("--name myimage --network=default_default --link c11 --expose 7000 -p 7000:7000 -v /doc/student_age.json:/data/student_age.json"){c ->
       sh 'docker ps'
     
     }
