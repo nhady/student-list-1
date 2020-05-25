@@ -1,1 +1,11 @@
-
+- hosts: app_vm
+  become: true
+  tasks:
+    - name: Deploy 4dvop-app
+      docker_container:
+        name: dirane/jenkins-docker-ansible-clair
+        hostname: python
+        image: 4dvop/myimage
+        state: started
+        ports:
+          - "8080:8080
