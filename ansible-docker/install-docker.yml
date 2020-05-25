@@ -1,6 +1,6 @@
 - name: Install docker
   gather_facts: No
-  hosts: 192.168.48.150
+  hosts: app_vm
   become: true
   
   pre_tasks:
