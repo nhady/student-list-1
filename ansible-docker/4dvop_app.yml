@@ -7,4 +7,5 @@
         hostname: centos
         image: nhady/docker-test
         state: started
-        
+        ports:
+          - "5000:5000"
