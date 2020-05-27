@@ -1,21 +1,10 @@
 - hosts: app_vm
   become: true
   tasks:
-    - name: Deploy nginx
-      docker_container:
-        name: nginx
-        hostname: nginx
-        image: dirane/4dvop-nginx
-        state: started
-        ports:
-          - "7070:7070"
     - name: Deploy student-list
       docker_container:
         name: myimage
         hostname: centos
         image: nhady/docker-test
         state: started
-        links:
-          - nginx:nginx
-        ports:
-          - "80:80"
+        
